@@ -1,26 +1,13 @@
 from random import randint
 
-from src.utils import clear_screen
+from src.utils import clear_screen, good_integer_between
 
 
 def get_sides():
     good_input = False
     while good_input == False:
         sides = input('How many sided dice? (2-99) :')
-        try:
-            val = int(sides)
-            if val > 99 or val <= 0:
-                print("Must be between 1 and 99.")
-                good_input = False
-            else:
-                good_input = True
-        except ValueError:
-            try:
-                val = float(sides)
-                print("Input must be a number")
-            except ValueError:
-                print("Input must be a number")
-
+        good_input = good_integer_between(2, 99, sides)
     return sides
 
 
