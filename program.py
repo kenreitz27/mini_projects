@@ -1,4 +1,4 @@
-from rolldice import play
+from src.rolldice import play
 
 def main():
     play()
